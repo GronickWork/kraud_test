@@ -1,0 +1,74 @@
+@font-face {
+  font-family: Merriweather;
+  src: url("../famili/Merriweather.ttf");
+}
+@font-face {
+  font-family: Golos;
+  src: url("../famili/GolosText.ttf");
+}
+:root {--PCs: 0px;}
+:root {--PCe: 0px;}
+:root {--SCs: 0px;}
+:root {--SCe: 0px;}
+* {margin: 0; padding: 0; box-sizing: border-box; font-size: 16px;}
+
+section { width: 100vw; font-family: Merriweather;}
+
+.footer {
+  padding: 40px 72px;
+  background: #E9DED4;
+}
+  .footer_text {width: calc(100vw*0.8946);}
+    .footer_text_p {
+      font-family: Golos;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 19.2px;
+      text-align: left;
+      opacity: 0.6;
+    }
+
+@media (max-width: 1200px) {.footer {padding: 40px 20px;}}
+
+@media (max-width: 576px) {
+  
+  .footer_text {width: 335px;}
+}
+
+
+/* Анимации */
+/* Для бегущей строки */
+.string1{
+  animation: running_line1 20s linear infinite;
+  animation-delay: -20s;
+}
+.string2{
+  animation: running_line2 20s linear infinite;
+  animation-delay: -10s;
+}
+
+@keyframes running_line1 {
+  from {transform: translate(100%);}
+  to {transform: translate(-100%);}
+}
+
+@keyframes running_line2 {
+from {transform: translate(0%);}
+to {transform: translate(-200%);}
+}
+
+/* Для прокрутки карт участников */
+.move-participants_card { animation: moving-participants_card 0.7s linear forwards; }
+               
+@keyframes moving-participants_card {
+  from {transform: translateX(var(--PCs));}
+  to {transform: translateX(var(--PCe));}
+}
+
+/* Для прокрутки карт этапов преображения*/
+.move_steps { animation: moving-steps 0.6s linear forwards; }
+
+@keyframes moving-steps {
+  from {transform: translateX(var(--SCs));}
+  to {transform: translateX(var(--SCe));}
+}
